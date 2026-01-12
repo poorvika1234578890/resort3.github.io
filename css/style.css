@@ -4366,3 +4366,16 @@ h6 {
 .footer_nav li.has-submenu .submenu {
     display: none !important;
 }
+/* Padding for resort heading */
+.resort-header {
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+/* Optional: better spacing on mobile */
+@media (max-width: 767px) {
+  .resort-header {
+    padding-top: 18px;
+    padding-bottom: 12px;
+  }
+}
