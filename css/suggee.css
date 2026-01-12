@@ -4873,3 +4873,65 @@ nav ul li .submenu li a:hover {
         max-width: 16% !important;
     }
 }
+/* ===== DESKTOP: SHOW PAGES SUBMENU ON HOVER ===== */
+@media (min-width: 992px) {
+
+    /* Hide submenu by default */
+    .footer .footer_nav li.has-submenu .submenu {
+        display: none;
+        position: absolute;
+        background: #000;
+        padding: 15px 20px;
+        margin-top: 10px;
+        min-width: 260px;
+        z-index: 999;
+    }
+
+    /* Show submenu on hover */
+    .footer .footer_nav li.has-submenu:hover .submenu {
+        display: block;
+    }
+
+    /* Ensure parent is positioned */
+    .footer .footer_nav li.has-submenu {
+        position: relative;
+    }
+
+    /* Submenu link styling */
+    .footer .submenu li {
+        margin-bottom: 12px;
+    }
+
+    .footer .submenu li a {
+        color: #bdbdbd;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .footer .submenu li a:hover {
+        color: #ff8c00;
+    }
+}
+/* REMOVE MOBILE MENU DIVIDER LINES */
+@media (max-width: 991px) {
+
+  .slicknav_nav li,
+  .slicknav_nav a {
+    border-bottom: none !important;
+  }
+
+  /* your custom mobile menu */
+  .mobile-nav li,
+  .mobile-nav a {
+    border-bottom: none !important;
+  }
+
+  /* remove pseudo lines */
+  .slicknav_nav li::after,
+  .slicknav_nav a::after,
+  .mobile-nav li::after,
+  .mobile-nav a::after {
+    content: none !important;
+    display: none !important;
+  }
+}
