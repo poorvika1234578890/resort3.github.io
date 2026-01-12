@@ -4371,3 +4371,26 @@ h6 {
     margin-top: 50px;
   }
 }
+/* REMOVE MOBILE MENU DIVIDER LINES */
+@media (max-width: 991px) {
+
+  .slicknav_nav li,
+  .slicknav_nav a {
+    border-bottom: none !important;
+  }
+
+  /* your custom mobile menu */
+  .mobile-nav li,
+  .mobile-nav a {
+    border-bottom: none !important;
+  }
+
+  /* remove pseudo lines */
+  .slicknav_nav li::after,
+  .slicknav_nav a::after,
+  .mobile-nav li::after,
+  .mobile-nav a::after {
+    content: none !important;
+    display: none !important;
+  }
+}
