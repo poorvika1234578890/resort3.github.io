@@ -47,7 +47,7 @@
                                 <ul id="navigation" class="d-flex justify-content-start align-items-center">
 
                                     <li>
-                                        <a href="#">Home</a>
+                                        <a href="index.html">Home</a>
                                         
                                     </li>
 
@@ -668,16 +668,22 @@
             });
 
             // Submenu toggle
-            mobileNav.querySelectorAll("li > a").forEach(link => {
-                const submenu = link.nextElementSibling;
-                if (submenu && submenu.classList.contains("submenu")) {
-                submenu.style.display = "none"; // hide initially
-                link.addEventListener("click", e => {
-                    e.preventDefault();
-                    submenu.style.display = submenu.style.display === "none" ? "block" : "none";
-                });
-                }
-            });
+            // ✅ Proper mobile submenu handling
+mobileNav.querySelectorAll("li").forEach(li => {
+  const link = li.querySelector(":scope > a");
+  const submenu = li.querySelector(":scope > .submenu");
+
+  if (submenu) {
+    submenu.style.display = "none";
+
+    link.addEventListener("click", e => {
+      e.preventDefault(); // prevent ONLY for submenu items
+      submenu.style.display =
+        submenu.style.display === "none" ? "block" : "none";
+    });
+  }
+});
+
             });
         </script>
 
